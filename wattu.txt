@@ -1,0 +1,20 @@
+(function() {let a = document.querySelectorAll('script'); console.log(a); let b = ''; 
+a.forEach(x => b += x.outerHTML); console.log(b); 
+b += document.getElementById('body-container').innerHTML; document.body.innerHTML = b;})();
+
+while(document.getElementById('page').lastChild.id != 'player') {
+	document.getElementById('page').removeChild(document.getElementById('page').lastChild);};
+while(document.getElementById('page').firstChild.id != 'player') {
+	document.getElementById('page').removeChild(document.getElementById('page').firstChild);};
+while(document.body.lastChild.id != 'body-container') {document.body.removeChild(document.body.lastChild);}; 
+while(document.body.firstChild.id != 'body-container') {document.body.removeChild(document.body.firstChild);}; 
+while(document.getElementById('body-container').lastChild.id != 'page-container') {
+	document.getElementById('body-container').removeChild(document.getElementById('body-container').lastChild);}; 
+while(document.getElementById('body-container').firstChild.id != 'page-container') {
+	document.getElementById('body-container').removeChild(document.getElementById('body-container').firstChild);};
+
+var a = document.querySelectorAll('*'); console.log(a);
+a.forEach(x => (x.localName === 'html' || x.id === 'body' || x.id === 'body-container' || 
+	x.id === 'page-container' || x.id === 'page' || x.id === 'player' || x.className === 'html5-video-container' || 
+	x.id === 'movie_player' || x.id === 'player-api' || x.id === 'player-mole-container' || 
+	x.className === 'video-stream html5-main-video') ? console.log('joo') : x.remove());
